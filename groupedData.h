@@ -9,12 +9,15 @@
 #ifndef __statsCalculator__groupedData__
 #define __statsCalculator__groupedData__
 
-#include "data.h"
-#include <stdio.h>
+#include "datum.h"
 
 class groupedData : public datum
 {
-    //work in progress
+public:
+    groupedData() : datum() {classMidpoint = 0; classFrequency = 0;}
+private:
+    double classMidpoint;
+    int    classFrequency;
 };
 
 #endif /* defined(__statsCalculator__groupedData__) */
