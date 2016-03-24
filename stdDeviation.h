@@ -9,14 +9,25 @@
 #ifndef __statsCalculator__stdDeviation__
 #define __statsCalculator__stdDeviation__
 
-#include "data.h"
+#include "datum.h"
+#include "groupedData.h"
 
-void datumSTDev(datum& data, const double rawData[], const int size);
+double calcVariance(const double rawData[], const int sizeRaw);
 //used for single data points
 //preconditions: data[] must be initialized and size must contain the number of the elements
 //               initialized.
-//postconditions: variance and standard deviation are set.
+//postconditions: returns a double representing the variance for the data set.
 
+double calcSTDev(double variance);
+//preconditions: variance must first be calculated because it is passed in as a parameter
+//postconditions: returns the sqrt of the variance, which is the standard deviation.
+
+void groupedSTDev(groupedData grpData[], const double classMids[], const double classFreq[],
+                  const int iterator,  const int size);
+//used for grouped data
+//preconditions: data[] must be initialized and size must contain the number of the elements
+//               initialized. Class midpoints and frequencies must be calculated before calling.
+//postconditions: grouped variance and standard deviation are set and stored in datum class.
 
 
 #endif /* defined(__statsCalculator__stdDeviation__) */
