@@ -69,3 +69,18 @@ void datum::readInData()
     cout << endl << "Thank you. All data for this set has been read in." << endl;
 }
 
+
+ostream& operator << (ostream& out, const datum& dataSet)
+{
+    out << "Measures of Central Tendency:" << '\n'
+        << "mean:   " << dataSet.mean << '\n'
+        << "median: " << dataSet.median << '\n'
+        << "mean:   " << dataSet.median << endl;
+    
+    out << "variance: " << dataSet.variance << '\n'
+        << "standard deviation: " << dataSet.stdDev << endl; 
+    return out;
+}
+
+
+

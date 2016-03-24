@@ -9,6 +9,9 @@
 #ifndef __statsCalculator__data__
 #define __statsCalculator__data__
 
+#include <iostream>
+using namespace std;
+
 class datum
 {
 public:
@@ -24,11 +27,13 @@ public:
     double getstdDev()   {return stdDev;}
     
     void calculations();
-    friend void STDev(const double rawData[], const int sizeRaw); 
+    friend void STDev(const double rawData[], const int sizeRaw);
     
     void initializeRawData();
     void promptSizeOfRawData();
     void readInData();
+    
+    friend ostream& operator << (ostream& out, const datum& dataSet);
     
 private:
     double mean, median, mode;

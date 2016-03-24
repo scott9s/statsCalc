@@ -27,7 +27,10 @@ int main()
     for(int i = 0; i < numOfDataSets; i++)
     {
         dataSets[i].initializeRawData();
-        dataSets[i].calculations(); 
+        dataSets[i].calculations();
+        
+        cout << "Displaying calculations for data set number " << i+1 << ':' << '\n' << endl;
+        cout << dataSets[i];
     }
     
     delete [] dataSets; //last bit of cleanup
